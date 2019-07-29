@@ -1,0 +1,182 @@
+@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Mono:400,400i');
+
+:root {
+	--animation-scale-01: scale(1.15);
+  --animation-scale-02: scale(1.2);
+  --animation-opacity-01: 0.6;
+  --animation-opacity-02: 0.7;
+}
+
+body {
+  overscroll-behavior: none;
+  background-color: #000000;
+	font-family: 'IBM Plex Mono', monospace;
+	font-size: 16px;
+	line-height: 1.5;
+	color: #cccccc;
+}
+main {
+  overflow: hidden;
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  display:  flex;
+  justify-content:  center;
+  align-items: center;
+  background-image: url(../imgs/noise.svg);
+}
+main::after {
+  /* pointer-events: none; */
+  will-change: scale;
+  content: " ";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100%;
+  /* opacity: 0.8; */
+  mix-blend-mode: screen;
+  background: radial-gradient(circle at 50% 36%, #fcddb7 0%, #4a4a4a 23%, #000 55%);
+  animation: itslit 250ms ease alternate infinite;
+  -webkit-animation: itslit 250ms ease alternate infinite;
+  -moz-animation: itslit 250ms ease alternate infinite;
+	-ms-animation: itslit 250ms ease alternate infinite;
+  -o-animation: itslit 250ms ease alternate infinite;
+  animation-delay: 250ms;
+}
+
+@keyframes itslit {
+  0% {
+    transform: var(--animation-scale-01);
+    opacity: var(--animation-opacity-01);
+  }
+  100% {
+		transform: var(--animation-scale-02);
+    opacity: var(--animation-opacity-02);
+  }
+}
+@-webkit-keyframes itslit {
+  0% {
+    transform: var(--animation-scale-01);
+    opacity: var(--animation-opacity-01);
+  }
+  100% {
+		transform: var(--animation-scale-02);
+    opacity: var(--animation-opacity-02);
+  }
+}
+@-moz-keyframes itslit {
+  0% {
+    transform: var(--animation-scale-01);
+    opacity: var(--animation-opacity-01);
+  }
+  100% {
+		transform: var(--animation-scale-02);
+    opacity: var(--animation-opacity-02);
+  }
+}
+@-ms-keyframes itslit {
+  0% {
+    transform: var(--animation-scale-01);
+    opacity: var(--animation-opacity-01);
+  }
+  100% {
+		transform: var(--animation-scale-02);
+    opacity: var(--animation-opacity-02);
+  }
+}
+@-o-keyframes itslit {
+  0% {
+    transform: var(--animation-scale-01);
+    opacity: var(--animation-opacity-01);
+  }
+  100% {
+		transform: var(--animation-scale-02);
+    opacity: var(--animation-opacity-02);
+  }
+}
+section {
+  z-index: 666;
+  text-align: center;
+  max-width: 420px;
+  margin-bottom: 2rem;
+}
+.logo {
+  display: block;
+  margin: 0 auto;
+  max-width: 240px;
+}
+hgroup {
+   margin: 1rem 0 4rem 0;
+}
+h2 {
+  font-size: 1.6rem;
+}
+.contact {
+  z-index: 1000;
+}
+main a, main a:visited {
+  color: #ff9933;
+  text-decoration: none;
+  font-style: italic;
+}
+main a:hover {
+  text-decoration: line-through;
+}
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 50px;
+  color: #666666;
+  font-size: 10px;
+  padding: 0 1rem;
+  display: flex;
+  justify-content: space-around;
+}
+footer a, footer a:visited {
+  color: #666666;
+  display:  inline-block;
+  text-decoration: none;
+  transition: color 300ms;
+}
+footer a:hover {
+  color: #ff9933;
+}
+@media only screen and (max-height:350px) {
+  main {
+    height: 100%;
+   margin-top: -2rem;
+    padding: 2rem 0 4rem 0;
+  }
+  footer {
+    position: relative;
+  }
+}
+@media only screen and (max-width:450px) {
+    body {
+    font-size: 13px;
+    line-height: 1.3;
+    }
+    section {
+      max-width: 300px;
+    }
+    .logo {
+      max-width: 160px;
+    }
+    hgroup{
+      margin-top: 0.5rem; 
+    }
+    h2 {
+      font-size:  1.2rem;
+    }
+    .contact {
+      position: fixed;
+      bottom: 3rem;
+      transform: translateX(-50%); 
+    }
+    footer {
+    font-size: 8px;
+    height: 25px;
+  }
+}
